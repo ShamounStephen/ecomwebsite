@@ -53,7 +53,7 @@ export default function Navbar() {
             className="flex flex-col justify-center items-center h-[60px] w-[70px] md:h-[60px] md:w-[70px] relative md:pt-3"
           >
             <ShoppingBag />
-            <span className="hidden text-xs font-semibold text-gray-500 sm:block">
+            <span className="text-xs text-primary hidden md:block">
               Cart
             </span>
           </Button>
