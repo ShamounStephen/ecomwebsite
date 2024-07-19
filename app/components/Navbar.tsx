@@ -18,7 +18,7 @@ export default function Navbar() {
   const { handleCartClick } = useShoppingCart();
   return (
     <header className='w-screen overflow-hidden  shadow h-[70px] flex  sticky top-0 z-50 border-b backdrop-filter backdrop-blur-lg bg-opacity-30 bg-white px-4 md:px-0 '>
-      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
+      <div className='w-[90%] md:w-[80%] 2xl:max-w-[1280px]  flex justify-between items-center mx-auto '>
         <Link href="/">
           <h1 className="text-2xl md:text-4xl font-bold">
             Flip<span className="text-primary">Commerce</span>
