@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { CheckCheck } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
+
 export default function stripeSuccess() {
   return (
     <div className="h-screen">
