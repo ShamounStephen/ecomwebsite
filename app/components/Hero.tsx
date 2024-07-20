@@ -20,8 +20,10 @@ export default async function Hero() {
             Top Fashion for a top price!
           </h1>
           <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
-            We sell only the most exclusive and high quality products for you.
-            We are the best so come and shop with us.
+            Step into Flip<span className="text-primary">Commerce</span> - Where
+            fashion transcends time. Discover curated collections, exclusive
+            deals, and a shopping experience like no other. Elevate your style
+            quotient with us!
           </p>
         </div>
         <div className="mb-12 flex w-full md:mb-16 lg:w-2/3">
