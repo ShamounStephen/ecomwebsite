@@ -38,7 +38,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary"
+                  className={`flex justify-between items-center gap-4 `}
                 >
                   {link.name}
                 </Link>
