@@ -25,7 +25,7 @@ export default function Navbar() {
           </h1>
         </Link>
 
-        <nav className={`flex justify-between items-center gap-4 `}>
+        <nav className="hidden lg:flex space-x-6 2xl:ml-16">
           {links.map((link, idx) => (
             <div key={idx}>
               {pathname === link.href ? (
