@@ -5,7 +5,6 @@ import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useShoppingCart } from "use-shopping-cart";
-import { SignInButton, SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 
 const links = [
   { name: "Home", href: "/" },
@@ -17,13 +16,11 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick, cartCount } = useShoppingCart();
-  const userStatus = useUser();
-
   return (
-    <header className="w-screen overflow-hidden shadow h-[70px] flex sticky top-0 z-50 border-b backdrop-filter backdrop-blur-lg bg-opacity-30 bg-white px-4 md:px-0">
-      <div className="w-[90%] md:w-[80%] 2xl:max-w-[1280px] flex justify-between items-center mx-auto">
+    <header className="w-screen overflow-hidden  shadow h-[70px] flex  sticky top-0 z-50 border-b backdrop-filter backdrop-blur-lg bg-opacity-30 bg-white px-4 md:px-0 ">
+      <div className="w-[90%] md:w-[80%] 2xl:max-w-[1280px]  flex justify-between items-center mx-auto ">
         <Link href="/">
-          <h1 className="text-2xl md:text-3xl font-semibold">
+          <h1 className="text-2xl md:text-3xl font-semibold ">
             Flip<span className="text-primary">Commerce</span>
           </h1>
         </Link>
@@ -32,38 +29,24 @@ export default function Navbar() {
           {links.map((link, idx) => (
             <div key={idx}>
               {pathname === link.href ? (
-                <Link className="text-lg font-semibold text-primary" href={link.href}>
+                <Link
+                  className="text-lg font-semibold text-primary"
+                  href={link.href}
+                >
                   {link.name}
                 </Link>
               ) : (
-                <Link href={link.href} className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary">
+                <Link
+                  href={link.href}
+                  className={`flex justify-between items-center gap-4 `}
+                >
                   {link.name}
                 </Link>
               )}
             </div>
           ))}
         </nav>
-
-        <div className="flex items-center gap-3">
-          <SignedOut>
-            <SignInButton>
-              <Button variant={"secondary"} className="px-3 text-primary lg:text-gray-900 lg:hover:text-primary">
-                Sign-In
-              </Button>
-            </SignInButton>
-          </SignedOut>
-
-          <SignedIn>
-            <div className="flex items-center gap-2 font-medium antialiased truncate h-full">
-              {userStatus.isLoaded && userStatus.isSignedIn && (
-                <div className="hidden lg:block">
-                  <span>Hey</span> {userStatus.user.firstName}!
-                </div>
-              )}
-              <UserButton />
-            </div>
-          </SignedIn>
-
+        <div className="flex divide-x border-r sm:border-l">
           <Button
             variant={"outline"}
             onClick={() => handleCartClick()}
